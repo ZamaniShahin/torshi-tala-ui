@@ -1,0 +1,64 @@
+/* ===================================================================
+   Design tokens — warm matte gold · aubergine · cream · RTL · Persian
+   Ported from tala.css :root. The runtime "Tweaks" panel is gone, so the
+   chosen defaults (gold #AE7A1C, hero font Lalezar, cream bg, smooth motion,
+   radius 12) are baked here as fixed values.
+   =================================================================== */
+
+:root {
+  /* ---- Brand color tokens ---- */
+  --gold: #ae7a1c; /* primary accent */
+  --gold-light: #c9a24e;
+  --gold-deep: #8a5f12;
+  --aubergine: #5e2a44;
+  --aubergine-2: #4a2035;
+  --ink: #3a2a1e; /* warm charcoal */
+  --muted: #7c6a4e;
+  --cream: #faf4e6;
+  --cream-2: #f3e9d2; /* deeper cream section */
+  --surface: #fffdf8;
+  --hairline: #e6d9be;
+  --hairline-2: #d8c79e;
+
+  /* ---- Surface + shape ---- */
+  --page-bg: var(--cream);
+  --radius: 12px;
+  --radius-sm: 8px;
+
+  /* ---- Type ---- */
+  --font-hero: 'Lalezar', 'Vazirmatn', sans-serif;
+  --font-body: 'Vazirmatn', ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- Motion ---- */
+  --reveal-y: 28px;
+  --reveal-dur: 820ms;
+
+  --container: 1180px;
+  --pad-x: clamp(20px, 5vw, 64px);
+  --shadow-card: 0 1px 2px rgba(58, 42, 30, 0.04), 0 18px 40px -28px rgba(58, 42, 30, 0.3);
+  --shadow-pop: 0 2px 4px rgba(58, 42, 30, 0.05), 0 34px 70px -34px rgba(94, 42, 68, 0.34);
+}
+
+html[data-motion='calm'] {
+  --reveal-y: 16px;
+  --reveal-dur: 620ms;
+}
+html[data-motion='lively'] {
+  --reveal-y: 44px;
+  --reveal-dur: 1000ms;
+}
+html[data-bg='deep'] {
+  --page-bg: var(--cream-2);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

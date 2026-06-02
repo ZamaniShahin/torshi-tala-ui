@@ -1,0 +1,10 @@
+/* ===================================================================
+   ترشی طلا — Torshi Tala · global stylesheet
+   The design system from the original tala.css, ported verbatim into
+   reviewable partials. Loaded once by the root layout.
+   Order matters: fonts → tokens → base → components.
+   =================================================================== */
+@import './styles/fonts.css';
+@import './styles/tokens.css';
+@import './styles/base.css';
+@import './styles/components.css';
