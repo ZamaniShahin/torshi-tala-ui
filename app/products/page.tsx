@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { products } from '@/config/products';
+import { getProducts } from '@/lib/api';
 import { PageHead } from '@/components/sections/PageHead';
 import { ProductCard } from '@/components/ui/ProductCard';
 import { ProductNote } from '@/components/sections/ProductNote';
@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/products/' },
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products = await getProducts();
   return (
     <>
       <PageHead

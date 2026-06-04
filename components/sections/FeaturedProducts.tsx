@@ -1,10 +1,11 @@
-import { featuredProducts } from '@/config/products';
+import { getFeaturedProducts } from '@/lib/api';
 import { Button } from '@/components/ui/Button';
 import { SectionHead } from '@/components/ui/SectionHead';
 import { ProductCard } from '@/components/ui/ProductCard';
 
 /** Home featured grid — the three flagged products. */
-export function FeaturedProducts() {
+export async function FeaturedProducts() {
+  const featuredProducts = await getFeaturedProducts();
   return (
     <section className="section">
       <div className="container">
